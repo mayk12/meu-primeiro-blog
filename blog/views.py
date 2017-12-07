@@ -6,7 +6,7 @@ from .forms import PostForm
 from django.shortcuts import redirect
 
 def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    posts = Post.objects.filter(data_publicacao__lte=timezone.now()).order_by('data_publicacao')
     return render(request, 'blog/post_list.html', {'posts': posts})
 
 def post_detail(request, pk):
@@ -18,8 +18,8 @@ def post_new(request):
         form = PostForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
+            post.autor = request.user
+            post.data_publicacao = timezone.now()
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
@@ -32,8 +32,8 @@ def post_edit(request, pk):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
+            post.autor = request.user
+            post.data_publicacao = timezone.now()
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
