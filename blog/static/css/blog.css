@@ -4,6 +4,10 @@ h1 a {
 }
 
 body {
+    background: white url("images/background.gif");
+}
+
+body {
     padding-left: 15px;
 }
 

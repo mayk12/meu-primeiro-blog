@@ -1,0 +1,30 @@
+li a {
+    color: #0D0A0C;
+}
+
+body {
+    background: white url("images/background.gif");
+}
+
+h1 a {
+    color: #DE09A9;
+    font-family: 'Lobster';
+}
+
+body {
+    padding-left: 15px;
+}
+
+.page-header {
+    background-color: #8B008B;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+

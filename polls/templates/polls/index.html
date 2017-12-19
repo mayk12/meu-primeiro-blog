@@ -1,0 +1,25 @@
+{% load static %}
+<html>
+<title>Enquetes</title>
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<div class="page-header">
+    <h1><a href="/">Enquetes:</a></h1>
+</div>
+<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</html>
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+    	<head> 
+		<style> 
+		li a{color:white} 
+		</style> 
+		</head> 
+        <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhuma enquete disponível.</p>
+{% endif %}
