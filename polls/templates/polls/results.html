@@ -5,7 +5,7 @@
 <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <head> 
 <style> 
-h1{color:white} 
+h1{color:black} 
 </style> 
 </head> 
 <h1>{{ question.question_text }}</h1>
@@ -14,7 +14,7 @@ h1{color:white}
 {% for choice in question.choice_set.all %}
 	<head> 
 	<style> 
-	li{color:white} 
+	li{color:black} 
 	</style> 
 	</head> 
     <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>

@@ -14,7 +14,7 @@
     {% for question in latest_question_list %}
     	<head> 
 		<style> 
-		li a{color:white} 
+		li a{color:black} 
 		</style> 
 		</head> 
         <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
